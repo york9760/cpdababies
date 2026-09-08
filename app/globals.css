@@ -22,3 +22,5 @@
 .scroll-motion.toy-icon{translate:0 28px;rotate:-7deg;transition:opacity .6s ease,translate .8s cubic-bezier(.2,.7,.2,1),rotate .8s ease}
 .scroll-motion.motion-visible{opacity:1;translate:0 0;rotate:0deg}
 @media(prefers-reduced-motion:reduce){.scroll-motion{opacity:1;translate:none;rotate:none;transition:none}}
+
+.hero-art img{mix-blend-mode:normal;object-fit:contain}
