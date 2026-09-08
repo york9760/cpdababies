@@ -1,0 +1,3 @@
+'use client';
+import {useEffect} from 'react';
+export function ScrollMotion(){useEffect(()=>{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const elements=Array.from(document.querySelectorAll<HTMLElement>('main h1,main h2,main h3,main p,main .eyebrow,.hero-note,.art-caption,.art-message,.trust span,.toy-icon'));let observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{entry.target.classList.toggle('motion-visible',entry.isIntersecting)})},{threshold:0.12});elements.forEach(el=>{el.classList.add('scroll-motion');observer.observe(el)});return()=>{observer.disconnect();elements.forEach(el=>el.classList.remove('scroll-motion','motion-visible'))}},[]);return null}
