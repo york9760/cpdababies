@@ -42,3 +42,8 @@
 .course.c2 .course-top{color:#2a7e07}
 .course.c3 .course-top{color:#7c7e07}
 @media(max-width:620px){.course-top{font-size:clamp(17px,5vw,20px)}}
+
+/* Purple navigation requested for the landing page. */
+.nav{background:#9a5dbb;color:#f8fafc}
+.nav::before{background:#9a5dbb}
+.nav nav.opened{background:#9a5dbb}
