@@ -48,3 +48,8 @@
 .nav::before{background:#9a5dbb}
 .nav nav.opened{background:#9a5dbb}
 .nav .brand-logo{mix-blend-mode:normal}
+.nav .brand-logo{width:250px;height:103px;object-fit:contain}
+.hero-character{animation:hero-character-float 4s ease-in-out infinite;transform-origin:50% 85%;will-change:transform}
+@keyframes hero-character-float{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-10px) rotate(1deg)}}
+@media(max-width:620px){.nav .brand-logo{width:min(250px,calc(100vw - 105px));height:auto}}
+@media(prefers-reduced-motion:reduce){.hero-character{animation:none}}
