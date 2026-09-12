@@ -25,3 +25,20 @@
 @media(prefers-reduced-motion:reduce){.scroll-motion{opacity:1;translate:none;rotate:none;transition:none}}
 
 .hero-art img{mix-blend-mode:normal;object-fit:contain}
+
+/* Landing-page annotation refinements. */
+.hero h1,.hero h1 span{color:#fff}
+.hero p{color:#2d4a86}
+.hero-note{color:#4649aa}
+.trust{background:#f2c0e8}
+.trust span:nth-child(1){color:#6e72e7}
+.trust span:nth-child(2){color:#d72fda}
+.trust span:nth-child(3){color:#056610}
+.trust span svg{color:currentColor!important}
+#courses .section-head h2,#courses .section-head p{color:#fff}
+.course-top{font-size:20px;font-weight:800;letter-spacing:.02em;line-height:1.25}
+.course.c0 .course-top{color:#c8048a}
+.course.c1 .course-top{color:#099087}
+.course.c2 .course-top{color:#2a7e07}
+.course.c3 .course-top{color:#7c7e07}
+@media(max-width:620px){.course-top{font-size:clamp(17px,5vw,20px)}}
