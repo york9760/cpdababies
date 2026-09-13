@@ -3,7 +3,7 @@ services:
     name: cpdababies
     runtime: node
     plan: free
-    buildCommand: corepack enable && pnpm install --frozen-lockfile && pnpm build
+    buildCommand: npm install --global pnpm@11.19.0 && pnpm install --frozen-lockfile && pnpm build
     startCommand: pnpm start
     healthCheckPath: /
     autoDeployTrigger: commit
