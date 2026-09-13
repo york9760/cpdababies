@@ -79,6 +79,10 @@
 .program-page{--program-accent:#83c4e4;--program-highlight:#cbefff;--program-soft:#e1f2fa;--program-ink:#257895}
 .program-page.theme-green{--program-accent:#9fc571;--program-highlight:#d8f0ad;--program-soft:#eaf3df;--program-ink:#4c7927}
 .program-page.theme-gold{--program-accent:#edb449;--program-highlight:#ffd66c;--program-soft:#fff2cf;--program-ink:#8a6800}
+.program-page.theme-purple{--program-accent:#9a5dbb;--program-highlight:#f2c0e8;--program-soft:#f3e8ff;--program-ink:#74408f}
+.program-page.theme-mint{--program-accent:#62b7a6;--program-highlight:#bff1e6;--program-soft:#e4f3ef;--program-ink:#20736a}
+.program-page.theme-coral{--program-accent:#e98b65;--program-highlight:#ffc4ad;--program-soft:#fff0e8;--program-ink:#a84b2b}
+.program-page.theme-coral .course-detail-copy h1{font-size:clamp(36px,4vw,52px)}
 .program-page .course-detail-copy h1 span{color:var(--program-highlight)}
 .program-page .program-visual{background:linear-gradient(145deg,var(--program-soft),#fff)}
 .program-page .visual-orbit{border-color:var(--program-accent)}
