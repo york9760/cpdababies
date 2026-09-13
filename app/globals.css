@@ -54,3 +54,17 @@
 @media(max-width:900px){.nav .brand{width:clamp(155px,24vw,210px)}}
 @media(max-width:620px){.nav .brand{width:clamp(130px,36vw,170px)}}
 @media(prefers-reduced-motion:reduce){.hero-character{animation:none}}
+
+/* Bilingual course catalogue. Three columns keep the longer course names readable. */
+.course-grid{grid-template-columns:repeat(3,1fr)}
+.course-top{align-items:flex-start;gap:14px;min-height:74px}
+.course-top>svg{flex:0 0 auto;margin-top:3px}
+.course-title{display:grid;gap:5px;min-width:0}
+.course-title strong{font:inherit;line-height:1.22}
+.course-title small{font-size:14px;font-weight:700;letter-spacing:.02em;line-height:1.45}
+.course.c4{background:#f3e8ff;border-top:4px solid #9a5dbb}.course.c4 .course-top{color:#74408f}
+.course.c5{background:#e4f3ef;border-top:4px solid #62b7a6}.course.c5 .course-top{color:#20736a}
+.course.c6{background:#fff0e8;border-top:4px solid #e98b65}.course.c6 .course-top{color:#a84b2b}
+.course.c6 .course-title strong{font-size:clamp(16px,1.55vw,19px)}
+@media(max-width:900px){.course-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.course-grid{grid-template-columns:1fr}.course-top{min-height:0}.course.c6 .course-title strong{font-size:17px}}
