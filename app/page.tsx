@@ -5,7 +5,7 @@ import {Tabs,TabsList,TabsTrigger,TabsContent} from '@/components/ui/tabs';
 import {ArrowRight, Heart, Sparkles, Sprout, Blocks, MessageCircle, Menu, X} from 'lucide-react';
 import {Select,SelectTrigger,SelectValue,SelectContent,SelectItem} from '@/components/ui/select';
 const courses=[
-  {age:'6 個月至 2 歲',label:'Playgroup',chineseName:'嬰幼兒潛能發展',description:'感官遊戲 · 親子連結',href:'https://www.cpda.com.hk/course-playgroup-for-infants-toddlers.html',toy:'lion'},
+  {age:'6 個月至 2 歲',label:'Playgroup',chineseName:'嬰幼兒潛能發展',description:'感官遊戲 · 親子連結',href:'/courses/playgroup',toy:'lion'},
   {age:'20–30 個月',label:'Pre-School',chineseName:'幼兒學前適應課程',description:'循序適應 · 培養自理',href:'https://www.cpda.com.hk/course-pre-school-class.html',toy:'train'},
   {age:'2–3 歲',label:'Pre Nursery',chineseName:'Pre-N 幼兒學前課程',description:'獨立上課 · 幼稚園準備',href:'https://www.cpda.com.hk/course-pre-N.html',toy:'bear'},
   {age:'2.5–6 歲',label:'Phonics',chineseName:'幼兒英語拼音課程',description:'認識字母 · 建立拼讀能力',href:'/branches',toy:'rainbow'},
