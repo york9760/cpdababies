@@ -94,3 +94,8 @@
 .program-page .focus-card svg{color:var(--program-ink)}
 .program-page .program-cta{background:var(--program-soft)}
 .program-page .program-cta .eyebrow{color:var(--program-ink)}
+
+/* Imported course character artwork. */
+.course-art{display:block;width:min(58%,170px);height:115px;object-fit:contain;margin:5px auto 0;transition:transform .25s ease;filter:drop-shadow(0 10px 12px #3f2c2420)}
+.course:hover .course-art{transform:translateY(-4px) rotate(-2deg)}
+@media(max-width:620px){.course-art{width:min(62%,180px);height:120px}}
