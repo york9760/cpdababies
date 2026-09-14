@@ -4,6 +4,7 @@ import {useState} from 'react';
 import {ArrowUpRight,Clock3,Mail,MapPin,MessageCircle,Phone} from 'lucide-react';
 import {Header,Footer} from '../page';
 import {branches,type BranchRegion} from './data';
+import {districtPaths} from './map-paths';
 
 const regions:BranchRegion[]=['香港島','九龍','新界'];
 const clean=(value:string)=>value.replace(/\s/g,'');
@@ -18,15 +19,11 @@ function HongKongMap({selected,onSelect}:{selected:number;onSelect:(index:number
         <pattern id="water-lines" width="44" height="28" patternUnits="userSpaceOnUse" patternTransform="rotate(-7)"><path d="M0 14 Q11 5 22 14 T44 14" fill="none" stroke="#8ac7df" strokeWidth="3" strokeLinecap="round" opacity=".35"/></pattern>
       </defs>
       <rect width="1000" height="620" rx="34" fill="#e5f5fb"/><rect width="1000" height="620" rx="34" fill="url(#water-lines)"/>
-      <g filter="url(#crayon-edge)" stroke="#547b6b" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round">
-        <path className="map-land nt" d="M72 84 L159 49 251 73 329 45 428 75 515 54 613 105 664 177 631 235 560 248 523 297 456 280 407 321 334 296 276 329 207 297 142 310 87 257 48 174Z"/>
-        <path className="map-land kowloon" d="M279 338 L350 323 430 334 500 318 540 348 513 410 450 425 393 408 337 423 291 397Z"/>
-        <path className="map-land island" d="M269 487 Q348 451 438 466 T592 452 Q626 469 606 497 T516 527 Q427 550 336 534 T269 487Z"/>
-        <path className="map-land lantau" d="M56 402 Q119 357 205 379 L260 433 218 500 128 513 63 470Z"/>
-        <path className="map-islet" d="M601 360 l28 -16 24 23 -31 22z"/><path className="map-islet" d="M184 338 l18 -9 14 17 -22 14z"/>
+      <g filter="url(#crayon-edge)" stroke="#547b6b" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round">
+        {districtPaths.map(district=><path key={district.code} className={`map-land ${district.region}`} d={district.d} fillRule="evenodd"/>)}
       </g>
-      <g className="crayon-scribbles" fill="none" strokeLinecap="round"><path d="M100 118 Q190 89 277 112 T462 101 T615 142"/><path d="M113 181 Q201 151 292 174 T479 164 T612 195"/><path d="M305 363 Q374 347 444 362 T518 358"/><path d="M303 489 Q394 476 489 491 T581 479"/></g>
-      <text x="330" y="188" className="map-region-label">新界</text><text x="369" y="386" className="map-region-label">九龍</text><text x="403" y="509" className="map-region-label">香港島</text>
+      <g className="crayon-scribbles" fill="none" strokeLinecap="round"><path d="M116 165 Q211 134 310 158 T520 143"/><path d="M90 232 Q190 207 286 224 T504 213"/><path d="M294 298 Q361 285 432 300 T526 291"/><path d="M290 366 Q367 352 448 366"/></g>
+      <text x="295" y="185" className="map-region-label">新界</text><text x="347" y="304" className="map-region-label">九龍</text><text x="348" y="374" className="map-region-label">香港島</text>
     </svg>
     {branches.map((item,index)=><button className={'branch-map-pin '+(index===selected?'active':'')} style={{left:`${item.x}%`,top:`${item.y}%`}} key={item.en} type="button" aria-label={`${item.name}分會：${item.address}`} aria-pressed={index===selected} onMouseEnter={()=>onSelect(index)} onFocus={()=>onSelect(index)} onClick={()=>onSelect(index)}><MapPin aria-hidden="true"/><span>{item.name}</span></button>)}
     </div>
@@ -46,7 +43,7 @@ export default function Branches(){
     <section className="section branch-map-section"><div className="section-head"><div><span className="eyebrow">FIND YOUR NEAREST CENTRE</span><h2>香港分會地圖</h2><p>滑鼠移至地點，或點按標記查看地址、聯絡方法及開放時間。</p></div><span className="region-count">14 間分會</span></div>
       <HongKongMap selected={selected} onSelect={setSelected}/>
       <div className="branch-map-key">{regions.map(region=><div key={region}><strong>{region}</strong><div>{branches.map((branch,index)=>branch.region===region&&<button type="button" className={index===selected?'active':''} onClick={()=>setSelected(index)} key={branch.en}>{branch.name}</button>)}</div></div>)}</div>
-      <p className="branch-source">分會資料以 CPDA 官方網站為準。<a className="text-link" href="https://www.cpda.com.hk/contact-us.html" target="_blank" rel="noreferrer">查看官方聯絡資料 <ArrowUpRight size={14}/></a></p>
+      <p className="branch-source">地圖輪廓依據香港政府開放區界資料及 Natural Earth 海岸線繪製；分會資料以 CPDA 官方網站為準。 <a className="text-link" href="https://www.cpda.com.hk/contact-us.html" target="_blank" rel="noreferrer">查看官方聯絡資料 <ArrowUpRight size={14}/></a></p>
     </section>
   </main><Footer/></>;
 }
